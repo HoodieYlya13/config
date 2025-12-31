@@ -1,0 +1,252 @@
+- macos:
+
+ctrl + a : start of line
+ctrl + e : end of line
+ctrl + f : forward
+ctrl + b : backward
+ctrl + d : del
+ctrl + h : backspace
+ctrl + w : word delete
+ctrl + k : cut text in one application (not really useful)
+ctrl + y : paste text in same application (not really useful)
+ctrl + l : center cursor (not really useful)
+ctrl + p : move up (not really useful)
+ctrl + n : move down (not really useful)
+ctrl + o : enter (not really useful)
+ctrl + t : swap character n with n + 1 (not really useful)
+
+- windows (remap ctrl to alt):
+
+ctrl + a : select all
+ctrl + c : copy (remap but keep original)
+ctrl + v : paste (remap but keep original)
+ctrl + x : cut (remap but keep original)
+ctrl + z : undo (remap but keep original)
+ctrl + shift + z : redo (remap but keep original)
+ctrl + t : new tab
+ctrl + shift + t : previous tab
+ctrl + w : close tab
+ctrl + shift + w : close window
+ctrl + f : search in current file
+ctrl + shift + f : search in all files
+ctrl + n : new file
+ctrl + shift + n : new window
+ctrl + s : save
+ctrl + shift + s : save as
+ctrl + r : refresh
+ctrl + shift + r : reload
+ctrl + l : AI chat
+ctrl + b : toggle left side bar visibility
+ctrl + shift + b : toggle right side bar visibility
+ctrl + p : print
+
+--> to add (and remap) :
+    ctrl + a : start of line
+    ctrl + e : end of line
+    ctrl + d : del
+    ctrl + h : backspace
+    ctrl + w : word delete
+    ctrl + b : backward
+    ctrl + f : forward
+    ctrl + p : move up
+    ctrl + n : move down
+    (ctrl + l : center cursor)
+
+- neovim:
+
+esc : enter normal mode
+ctrl + [ : esc
+ctrl + c : cancel/esc (skips some autocommands, slightly different from esc) (should be remapped to another ctrl available or useless key)
+
+--> normal mode
+    ctrl + f : scroll forward one full screen (remapped to space + f)
+    ctrl + b : scroll backward one full screen (remapped to space + b)
+    ctrl + d : scroll down half screen (remapped to space + d)
+    ctrl + u : scroll up half screen (remapped to space + u)
+    ctrl + e : scroll down one line (remapped to space + e)
+    ctrl + y : scroll up one line (remapped to space + y)
+    ctrl + o : jump to previous cursor position (remapped to space + o)
+    ctrl + i (or tab) : jump to next cursor position (remapped to space + i)
+
+    ctrl + w :
+      v : vertical split
+      s : horizontal split
+      c : close current split
+      = : equalize split sizes
+    ctrl + h/j/k/l : move cursor to left, down, up, right
+    ctrl + ^ : switch to alternate file
+
+    ctrl + r : redo (opposite of u for undo)
+    ctrl + a : increment number (not really useful so removed from vs code)
+    ctrl + x : decrement number (not really useful so removed from vs code)
+    ctrl + v : enter visual mode (block) (remapped to ctrl + shift + v)
+    ctrl + l : redraw screen
+    ctrl + g : show info about current file
+    ctrl + z : suspend neovim (fg in terminal to return) (disabled)
+    ctrl + ] : jump to definition
+    ctrl + t : jump back to previous cursor position
+
+    h/j/k/l : move cursor to left, down, up, right
+    w/b : jump forward/backward word (stops at punctuation)
+    W/B : jump forward/backward (stops at whitespace)
+    e/ge : jump to end of word forward/backward
+    0/$ : jump to start/end of line
+    ^ : jump to start of line
+    G : jump to end of file
+    gg : jump to start of file
+    % :  jump between matching brackets ((), {}, [])
+
+    zz : center cursor
+    zt : top cursor
+    zb : bottom cursor
+
+    x : delete character
+    r{char} : replace character by char
+    R : replace mode
+    f{char} : go to next char
+    F{char} : go to previous char
+    u : undo
+    d : delete operator
+    dd : delete line
+    dw : delete word
+    d$ : delete to end of line
+    d0 : delete to start of line
+    c : change operator
+    cw : change word
+    c$ : change to end of line
+    c0 : change to start of line
+    y : yank operator
+    yy : yank line
+    yw : yank word
+    y$ : yank to end of line
+    y0 : yank to start of line
+    p : paste after cursor
+    P : paste before cursor
+    . : repeat last change
+    ~ : toggle case (lowercase to uppercase and vice versa)
+    >> : indent line
+    << : unindent line
+    J : join current line with next line
+    gJ : join current line with next line without space
+
+    / : start forward search
+    ? : start backward search
+    n : next search
+    N : previous search
+    * : search word under cursor forward
+    # : search word under cursor backward
+
+    i : insert before cursor
+    a : append after cursor
+    I : insert at start of line
+    A : append at end of line
+    o : open line below
+    O : open line above 
+
+    v : enter visual mode (char)
+    V : enter visual line mode (line)
+
+    : : enter command mode
+
+--> insert mode
+    ctrl + h : backspace (useless)
+    ctrl + w : word delete (useless)
+
+    ctrl + o : execute one normal mode command
+    ctrl + r {register} : paste from register " for neovim and + for clipboard (useless if clipboard is set to unnamedplus)
+    ctrl + t : indent current line (remapped to >>)
+    ctrl + d : un-indent current line (remapped to <<)
+    ctrl + j / ctrl + m : insert a new line
+    ctrl + v {character} : insert {character} literally (not really useful)
+
+    ctrl + n : select next match in completion menu
+    ctrl + p : select previous match in completion menu
+    ctrl + x ctrl + f : file path completion (does not work in vs code)
+    ctrl + x ctrl + l : whole line completion (does not work in vs code)
+
+--> visual mode (v, V, ctrl + v)
+    d/x : delete selection
+    c : change selection
+    y : yank selection
+    p : paste over selection
+    > : indent selection
+    < : un-indent selection
+    J : join selection
+    = : fix indentation
+    gq : hard wrap text (break long lines)
+    o : move cursor to other end of selection
+    I : (Block mode only) insert text on all selected lines
+    A : (Block mode only) append text on all selected lines
+
+--> command mode (:)
+    :w : write (save) file
+    :q : quit
+    :wq : write and quit
+    :q! : quit without saving
+    :e : edit file
+    :e {file} : edit file
+    :n : next file
+    :N : previous file
+    :r {file} : read file
+    :terminal : open terminal
+    
+    ctrl + p : previous command
+    ctrl + n : next command
+    ctrl + b : jump to beginning of command line
+    ctrl + e : jump to end of command line
+    ctrl + w : delete word
+    ctrl + r {register} : paste from register into command line
+    tab : cycle through completion
+
+--> terminal mode
+    ctrl + n / ctrl + \ : exit terminal mode
+    i/a : enter terminal mode (send keys to shell)
+    ctrl + v : passes ctrl + v to shell
+
+--> operator-pending motions (after d, c, y, p, etc)
+    i w : Inner Word
+    a w : Around Word
+    i ( or i ) : Inner Parenthesis
+    a ( or a ) : Around Parenthesis
+    i " or i ' : Inner Quote
+    i t : Inner Tag
+    i b : Inner Block
+    i B : Inner Big Block
+    i e : Inner Everything
+    i ge : Inner Everything (backwards)
+    0/$ : line
+    ^ : line (start)
+    G : file (end)
+    gg : file (start)
+    % : match
+
+--> file explorer
+    a : new file
+    A : new folder
+    G : go to bottom
+    gg : go to top    
+
+- init.lua :
+
+jj : esc
+space + ; : :
+space + q : :q
+space + w : :w
+space + / : :nohlsearch (clear search)
+L : select line
+space + sa : select all
+space + j : move lines down
+space + k : move lines up
+
+--> vs code (normal mode only)
+    ctrl + h : navigate left (remap)
+    ctrl + j : navigate down
+    ctrl + k : navigate up
+    ctrl + l : navigate right (remap)
+
+    space + e : toggle left side bar visibility
+    space + f : search file
+    space + a : open AI chat (to change vscode.call('workbench.action.chat.open'))
+    space + i : open inline chat (to change vscode.call('inlineChat.start'))
+
+    gc : comment line

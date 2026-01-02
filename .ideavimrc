@@ -1,0 +1,138 @@
+" ==========================================
+" GENERAL SETTINGS
+" ==========================================
+let mapleader = " "
+set number relativenumber
+set clipboard+=unnamed
+set incsearch
+set scrolloff=5
+
+" ==========================================
+" PLUGINS
+" ==========================================
+" Enable standard plugins to match VS Code extensions
+set commentary
+set surround
+set multiple-cursors
+
+" ==========================================
+" BASIC MAPPINGS (From init.lua)
+" ==========================================
+
+" DISABLE SUSPENDING
+map <C-z> <Nop>
+
+" Disable Escape in all modes
+inoremap <Esc> <Nop>
+nnoremap <Esc> <Nop>
+vnoremap <Esc> <Nop>
+
+" COMMANDS & QOL
+nnoremap <leader>; :
+nnoremap <leader>q :q<CR>
+nnoremap <leader>w :w<CR>
+nnoremap <leader>/ :nohlsearch<CR>
+
+" SELECTION
+nnoremap L vg_
+nnoremap <leader>sa ggVG
+
+" NORMAL MODE SCROLLING & CENTERING
+" IdeaVim handles 'zz' natively
+nnoremap <leader>f <C-f>zz
+nnoremap <leader>b <C-b>zz
+nnoremap <leader>d <C-d>zz
+nnoremap <leader>u <C-u>zz
+nnoremap <leader>e <C-e>
+nnoremap <leader>y <C-y>
+
+" JUMP LIST (Matching your init.lua)
+nnoremap <leader>o <C-o>
+" Note: In VS Code your 'Space i' is Chat, but your Lua says <C-i>.
+" I have mapped Space+i to Jump Forward below.
+" If you want Chat instead, see the AI Section.
+nnoremap <leader>i <C-i>
+
+" SEARCH CENTERING
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+" INSERT MODE TWEAKS
+inoremap << <C-d>
+inoremap >> <C-t>
+inoremap jj <Esc>
+
+" VISUAL MODE
+vnoremap <C-S-v> <C-v>
+nnoremap <C-S-v> <C-v>
+
+" ==========================================
+" VS CODE EQUIVALENTS (From keybindings.json)
+" ==========================================
+
+" MOVE LINES (Space j / Space k)
+nnoremap <leader>j :m .+1<CR>==
+nnoremap <leader>k :m .-2<CR>==
+vnoremap <leader>j :m '>+1<CR>gv=gv
+vnoremap <leader>k :m '<-2<CR>gv=gv
+
+" ==========================================
+" MACOS NATIVE TEXT EDITING (Overrides Navigation!)
+" ==========================================
+
+" INSERT MODE
+" Ctrl+h = Backspace
+inoremap <C-h> <BS>
+" Ctrl+d = Delete (Forward)
+inoremap <C-d> <Del>
+
+" COMMAND LINE MODE (Searching / Command bar)
+cnoremap <C-h> <BS>
+cnoremap <C-d> <Del>
+
+" NORMAL MODE
+" Ctrl+h = Delete character BEFORE cursor (like Backspace)
+nnoremap <C-h> X
+" Ctrl+d = Delete character UNDER cursor (like Delete)
+nnoremap <C-d> x
+
+" VISUAL MODE
+" Both just delete the selection
+vnoremap <C-h> d
+vnoremap <C-d> d
+
+" SIDEBAR VISIBILITY (Space e)
+nnoremap <leader>e <Action>(ActivateProjectToolWindow)
+
+" ==========================================
+" AI / CHAT MAPPINGS (Space a / Space i)
+" ==========================================
+" NOTE: These Action IDs depend on what plugin you use in IntelliJ.
+" By default, I mapped them to standard "Show Intentions" and "Generate".
+" If you use Copilot for IntelliJ, you must find the action ID via 'Track Action IDs'.
+
+" Space+a: VS Code = Copilot Panel. IntelliJ = Show Intentions (closest built-in)
+nnoremap <leader>a <Action>(ShowIntentionActions)
+
+" Space+i: VS Code = Inline Chat. IntelliJ = Generate Code
+nnoremap <leader>c <Action>(Generate)
+
+" ==========================================
+" HANDLERS
+" ==========================================
+" This ensures Vim handles these keys, not the IDE
+sethandler <C-j> a:vim
+sethandler <C-k> a:vim
+sethandler <C-l> a:vim
+sethandler <C-h> a:vim
+sethandler <C-d> a:vim
+
+"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+"" Map \r to the Reformat Code action
+"map \r <Action>(ReformatCode)
+
+"" Map <leader>d to start debug
+"map <leader>d <Action>(Debug)
+
+"" Map \b to toggle the breakpoint on the current line
+"map \b <Action>(ToggleLineBreakpoint)

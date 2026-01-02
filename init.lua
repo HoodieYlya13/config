@@ -41,13 +41,15 @@ if vim.g.vscode then
     
     local vscode = require("vscode")
 
-    -- [!!!] FORCE INSERT MODE BY DEFAULT [!!!]
-    vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter" }, {
-        pattern = "*",
-        callback = function()
-            vim.cmd("startinsert")
-        end,
-    })
+    -- -- [!!!] FORCE INSERT MODE BY DEFAULT [!!!]
+    -- vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter" }, {
+    --     pattern = "*",
+    --     callback = function()
+    --         vim.cmd("startinsert")
+    --     end,
+    -- })
+
+    vim.opt.mouse = ""
 
 else
     -- ==========================================

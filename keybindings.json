@@ -346,6 +346,11 @@
     "command": "-vscode-neovim.send",
     "when": "neovim.init && neovim.recording || editorTextFocus && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
   },
+  {
+    "key": "enter",
+    "command": "-list.select",
+    "when": "listFocus && !inputFocus && !notebookCellListFocused"
+  },
 
   // KEYBINDINGS TO SORT
   {

@@ -1,0 +1,1 @@
+npm install eslint-plugin-react-hooks@latest babel-plugin-react-compiler --save-dev

@@ -31,13 +31,7 @@
       "args": ["<<"]
     }
   },
-  "vscode-neovim.ctrlKeysForInsertMode": [
-    "j",
-    "m",
-    "o",
-    "r",
-    "u"
-  ],
+  "vscode-neovim.ctrlKeysForInsertMode": ["j", "m", "o", "r", "u"],
   "vscode-neovim.ctrlKeysForNormalMode": [
     "b",
     "e",
@@ -76,5 +70,6 @@
   },
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "editor.minimap.enabled": false
 }

@@ -1,6 +1,0 @@
-[submodule "github/github-readme-stats"]
-	path = github/github-readme-stats
-	url = git@github.com-HoodieYlya13:HoodieYlya13/github-readme-stats.git
-[submodule "github/HoodieYlya13"]
-	path = github/HoodieYlya13
-	url = git@github.com-HoodieYlya13:HoodieYlya13/HoodieYlya13.git
